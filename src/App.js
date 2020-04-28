@@ -1,21 +1,24 @@
-import React from "react"
+/** @jsx jsx */
+import React, { useContext } from "react"
 import "./App.css"
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import { faEye } from "@fortawesome/pro-solid-svg-icons"
-import AccessButton from "./accessButton"
 import AccessBar from "./accessBar"
 import Landing from "./landing"
+import { AccessibilityProvider, AccessibilityContext } from "./accessContext"
+import { jsx, css, Global } from "@emotion/core"
+import { library } from "@fortawesome/fontawesome-svg-core"
+import { fab } from "@fortawesome/free-brands-svg-icons"
+library.add(fab)
 
 function App() {
   return (
-    <React.Fragment>
+    <AccessibilityProvider>
       <header>
         <AccessBar />
       </header>
       <main>
         <Landing />
       </main>
-    </React.Fragment>
+    </AccessibilityProvider>
   )
 }
 
