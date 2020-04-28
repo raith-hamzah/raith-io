@@ -52,7 +52,9 @@ function AccessBar(props) {
           >
             <FontAwesomeIcon icon={faSearchPlus} />
           </AccessButton>
-          <AccessButton>
+          <AccessButton
+            onClick={e => update(e, theme.setTextWide)(!theme.textWide)}
+          >
             <FontAwesomeIcon icon={faTextWidth} />
           </AccessButton>
         </form>

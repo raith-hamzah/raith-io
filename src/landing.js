@@ -4,7 +4,6 @@ import { jsx, css, Global } from "@emotion/core"
 import Container from "./container"
 import image from "./images/headshot.jpg"
 import { AccessibilityContext } from "./accessContext"
-import AccessButton from "./accessButton"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 
 const imageStyles = css`
@@ -30,7 +29,6 @@ function Landing(props) {
     font-family: Avenir, Arial, Helvetica, sans-serif;
     margin-bottom: 24px;
     h1 {
-      text-align: center;
       text-shadow: 3px 3px ${theme.highContrast ? "transparent " : "black"};
       margin: 0;
     }
@@ -58,6 +56,7 @@ function Landing(props) {
             color: ${theme.highContrast ? "#fcff00" : "black"};
             background: ${theme.highContrast ? "black" : "white"};
             font-family: Avenir, Arial, Helvetica, sans-serif;
+            letter-spacing: ${theme.textWide ? "3px" : "0px"};
             p,
             li {
               font-size: 18px;
@@ -66,7 +65,9 @@ function Landing(props) {
         `}
       />
       <div css={styles}>
-        <h1>Raith Hamzah | Software Engineer</h1>
+        <Container>
+          <h1>Raith Hamzah | Software Engineer</h1>
+        </Container>
       </div>
       <Container>
         <div>
@@ -82,7 +83,7 @@ function Landing(props) {
             myriad of other technologies. I'm a staunch advocate for
             accessibility in web apps and try to bring good accessibility habits
             to every project I work on. Play with the accessibility bar at the
-            top to see some accessiibility helpers.
+            top to see some accessibility helpers.
           </p>
         </div>
         <a css={anchorHeadingStyles} href='#skills'>
@@ -93,10 +94,25 @@ function Landing(props) {
             Languages: Javascript (Typescript, NodeJS, Flow), Python, PHP, Java,
             C#
           </li>
-          <li>Frameworks: React (Redux, Apollo, MobX), Angular, Vue</li>
           <li>
-            Libraries: Reactive Extensions (Rx), Underscore, Ramda, Sanctuary
+            Frameworks: React (Redux, Apollo, MobX, Emotion), Angular, Vue
           </li>
+          <li>
+            Libraries: Jest, Enzyme, React-Testing-Libraray, Reactive Extensions
+            (Rx), Underscore, Ramda, Sanctuary, Knockout
+          </li>
+          <li>Hybrid Apps: Ionic, React Native, Electron</li>
+          <li>Databases: MySQL, PostgreSQL, MongoDB</li>
+          <li>DevOps: Git, Jira, Confluence, Fisheye</li>
+        </ul>
+        <a css={anchorHeadingStyles} href='#life'>
+          Life Skills
+        </a>
+        <ul>
+          <li>Answering Star Trek trivia.</li>
+          <li>Sleeping well on airplanes.</li>
+          <li>Not letting the food accidentally burn.</li>
+          <li>Funny dances.</li>
         </ul>
         <a css={anchorHeadingStyles} href='#links'>
           Reach out to me
@@ -122,7 +138,7 @@ function Landing(props) {
           <a href='https://www.linkedin.com/in/raith'>
             <FontAwesomeIcon icon={["fab", "linkedin"]} />
           </a>
-          <a href='https://twitter.com/raith.hamzah'>
+          <a href='https://twitter.com/RaithHamzah'>
             <FontAwesomeIcon icon={["fab", "twitter-square"]} />
           </a>
         </div>
